@@ -16,7 +16,7 @@ class Translator(commands.Cog):
                 letters.append(letter)
         return letters
 
-    @commands.command(brief="Talk like LOR3!", description="Talk like LOR3 from the Gaming Tavern!", usage="`message`")
+    @commands.command(brief="Decode the symbols")
     async def decode(self, ctx, *args):
         if len(args) <= 0:
             return await ctx.reply("Please supply a message to decode!")
