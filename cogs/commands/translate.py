@@ -54,7 +54,23 @@ class Translator(commands.Cog):
             await ctx.reply("Something went wrong.")
             print(e)
         
+    @commands.command(brief="Read what P34RL is saying")
+    async def read(self, ctx, *args):
+        if len(args) <= 0:
+            return await ctx.reply("Please supply a message to generate!")
         
+        message = re.sub(r"(?is)3", "e", " ".join(args)) 
+        message = re.sub(r"(?is)2", "s", message)
+        message = re.sub(r"(?is)6", "b", message)
+        message = re.sub(r"(?is)7", "t", message)
+        message = re.sub(r"(?is)l<", "k", message)
+        message = re.sub(r"(?is)4", "a", message)
+        message = re.sub(r"(?is)vv", "w", message)
+        message = re.sub(r"(?is)0", "o", message)
+        message = re.sub(r"(?is)1", "i", message)
+        message = re.sub(r"(?is)€", "c", message)
+
+        await ctx.reply(message)
 
     
 async def setup(bot):
