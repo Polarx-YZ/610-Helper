@@ -57,7 +57,7 @@ class Translator(commands.Cog):
     @commands.command(brief="Read what P34RL is saying")
     async def read(self, ctx, *args):
         if len(args) <= 0:
-            return await ctx.reply("Please supply a message to generate!")
+            return await ctx.reply("Please supply a message to read!")
         
         message = re.sub(r"(?is)3", "e", " ".join(args)) 
         message = re.sub(r"(?is)2", "s", message)
